@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#050816">
+    <meta
+        name="description"
+        content="Phong Lyiz — Anime, Gaming, Technology"
+    >
+
+    <title>Phong Lyiz — Ultimate Anime Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen">
+        <div class="boot-core">
+
+            <div class="boot-logo">
+                PHONG LYIZ
+            </div>
+
+            <div class="boot-line">
+                <span id="boot-text">
+                    INITIALIZING SYSTEM...
+                </span>
+                <span class="boot-cursor">_</span>
+            </div>
+
+            <div class="boot-progress">
+                <div id="boot-progress-fill"></div>
+            </div>
+
+            <div class="boot-percent" id="boot-percent">
+                0%
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- MUSIC UNLOCK -->
+    <div
+        id="music-unlock"
+        class="music-unlock"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="music-unlock-title"
+    >
+
+        <div class="unlock-card">
+
+            <div class="unlock-icon">
+                ♫
+            </div>
+
+            <div id="music-unlock-title" class="unlock-title">
+                PHONG LYIZ
+            </div>
+
+            <div class="unlock-subtitle">
+                ENTER THE WORLD
+            </div>
+
+            <button
+                id="enterBtn"
+                class="enter-btn"
+                type="button"
+            >
+                <span>ENTER</span>
+                <b>↗</b>
+            </button>
+
+            <button
+                id="skipMusicBtn"
+                class="skip-music-btn"
+                type="button"
+            >
+                CONTINUE WITHOUT MUSIC
+            </button>
+
+            <div class="unlock-hint">
+                Click to enter • music experience
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EFFECT LAYERS -->
+    <canvas id="particles"></canvas>
+    <canvas id="ambient-canvas"></canvas>
+
+    <div id="sakura-container"></div>
+
+    <div class="mouse-glow"></div>
+    <div id="cursor-trail"></div>
+
+    <div class="cinematic-vignette"></div>
+    <div class="scanlines"></div>
+
+
+    <!-- TOP STATUS -->
+    <div class="top-status">
+
+        <div class="system-status">
+            <span class="system-dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+        <div class="fps-counter">
+            FPS <span id="fps">60</span>
+        </div>
+
+    </div>
+
+
+    <!-- MAIN PAGE -->
+    <main class="page">
+
+        <div
+            class="profile-theme-frame"
+            id="profileCard"
+        >
+
+            <!-- BANNER -->
+            <div class="banner-container">
+
+                <img
+                    src="assets/banner.gif"
+                    alt="Phong Lyiz Banner"
+                    class="profile-banner"
+                    onerror="this.src='assets/background.jpg'"
+                >
+
+                <div class="banner-overlay"></div>
+                <div class="banner-grid"></div>
+                <div class="banner-scan"></div>
+
+                <div class="banner-label">
+                    <span>PLX</span>
+                    <small>PROFILE SYSTEM</small>
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE HEADER -->
+            <div class="profile-header-horizontal">
+
+                <div class="avatar-wrapper">
+
+                    <div class="avatar-ring"></div>
+
+                    <img
+                        src="assets/anime-pfp.gif"
+                        alt="Phong Lyiz"
+                        class="avatar"
+                        onerror="this.src='https://i.imgur.com/6VBx3io.png'"
+                    >
+
+                    <div class="status-badge"></div>
+
+                </div>
+
+
+                <div class="header-info">
+
+                    <div class="name-container">
+
+                        <h1 class="profile-name">
+                            Phong Lyiz
+                        </h1>
+
+                        <span
+                            class="verified-badge"
+                            title="Verified Otaku"
+                        >
+                            ✓
+                        </span>
+
+                    </div>
+
+                    <div class="profile-tag">
+                        @poongdepzai
+                    </div>
+
+                    <div class="status-pill-row">
+
+                        <span class="status-dot-green"></span>
+
+                        <span>
+                            Online
+                        </span>
+
+                        <span class="status-divider">
+                            •
+                        </span>
+
+                        <span>
+                            Vietnam 🇻🇳
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ABOUT -->
+            <section class="section-block">
+
+                <div class="section-title">
+                    — ABOUT ME
+                </div>
+
+                <div class="bio-box">
+                    Hey, I'm <strong>Phong Lyiz</strong> 👋<br>
+                    A guy who loves <strong>technology</strong>,
+                    <strong>games</strong> and <strong>anime</strong>.
+                </div>
+
+                <div class="about-cards-grid">
+
+                    <div class="about-card">
+
+                        <span class="card-icon">
+                            💻
+                        </span>
+
+                        <div>
+                            <div class="card-title">
+                                IT
+                            </div>
+
+                            <small>
+                                Student
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <span class="card-icon">
+                            🎮
+                        </span>
+
+                        <div>
+                            <div class="card-title">
+                                Gamer
+                            </div>
+
+                            <small>
+                                Genshin / HSR / MC
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <span class="card-icon">
+                            🌸
+                        </span>
+
+                        <div>
+                            <div class="card-title">
+                                Anime
+                            </div>
+
+                            <small>
+                                Enjoyer
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BADGES -->
+            <section class="section-block">
+
+                <div class="section-title">
+                    — BADGES
+                </div>
+
+                <div class="badges-row">
+
+                    <div class="badge-item" title="Gamer">
+                        🎮
+                    </div>
+
+                    <div class="badge-item" title="Developer">
+                        💻
+                    </div>
+
+                    <div class="badge-item" title="Otaku">
+                        🌸
+                    </div>
+
+                    <div class="badge-item" title="V.I.P">
+                        ✨
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INTERESTS -->
+            <section class="section-block">
+
+                <div class="section-title">
+                    — INTERESTS
+                </div>
+
+                <div class="interests-grid">
+
+                    <button
+                        class="interest-tag uid-tag"
+                        type="button"
+                        aria-label="Copy Genshin Impact UID 879407286"
+                    >
+                        Genshin Impact
+                        <small>(UID: 879407286)</small>
+                    </button>
+
+                    <button
+                        class="interest-tag uid-tag"
+                        type="button"
+                        aria-label="Copy Honkai: Star Rail UID 841646342"
+                    >
+                        Honkai: Star Rail
+                        <small>(UID: 841646342)</small>
+                    </button>
+
+                    <span class="interest-tag">
+                        Minecraft
+                    </span>
+
+                    <span class="interest-tag">
+                        Anime
+                    </span>
+
+                    <span class="interest-tag">
+                        Programming
+                    </span>
+
+                    <span class="interest-tag">
+                        Japanese
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONNECT -->
+            <section class="section-block">
+
+                <div class="section-title">
+                    — CONNECT
+                </div>
+
+                <div class="connect-list">
+
+                    <a
+                        href="https://discord.com/users/930713687893893130"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="connect-card"
+                    >
+
+                        <div class="connect-left">
+
+                            <span class="connect-icon discord-bg">
+                                D
+                            </span>
+
+                            <div>
+                                <div class="connect-name">
+                                    Discord
+                                </div>
+
+                                <small>
+                                    @poongdepzai
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <span class="arrow-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.tiktok.com/@ngudong24h"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="connect-card"
+                    >
+
+                        <div class="connect-left">
+
+                            <span class="connect-icon tiktok-bg">
+                                ♪
+                            </span>
+
+                            <div>
+                                <div class="connect-name">
+                                    TikTok
+                                </div>
+
+                                <small>
+                                    @ngudong24h
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <span class="arrow-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.facebook.com/dangngudongzz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="connect-card"
+                    >
+
+                        <div class="connect-left">
+
+                            <span class="connect-icon fb-bg">
+                                f
+                            </span>
+
+                            <div>
+                                <div class="connect-name">
+                                    Facebook
+                                </div>
+
+                                <small>
+                                    @dangngudongzz
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <span class="arrow-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- MUSIC -->
+            <section class="section-block">
+
+                <div class="section-title">
+                    — NOW PLAYING
+                </div>
+
+                <div class="music-player-wide">
+
+                    <div
+                        class="music-icon-box"
+                        id="musicDisk"
+                    >
+                        ♪
+                    </div>
+
+                    <div class="music-info">
+
+                        <div class="song-title">
+                            Phong buồn
+                        </div>
+
+                        <div class="song-artist">
+                            Phong Lyiz's playlist
+                        </div>
+
+                        <div
+                            class="visualizer"
+                            id="visualizer"
+                        ></div>
+
+                        <div
+                            class="progress-track"
+                            id="progressTrack"
+                        >
+                            <div
+                                class="progress-fill"
+                                id="progress"
+                            ></div>
+                        </div>
+
+                    </div>
+
+                    <button
+                        id="playBtn"
+                        class="play-btn-wide"
+                        type="button"
+                        aria-label="Play or pause music"
+                    >
+                        ▶
+                    </button>
+
+                </div>
+
+
+                <div class="music-controls">
+
+                    <label class="volume-control">
+
+                        <span>
+                            🔊
+                        </span>
+
+                        <input
+                            id="volumeSlider"
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            value="0.45"
+                            aria-label="Volume"
+                        >
+
+                    </label>
+
+
+                    <button
+                        id="soundToggle"
+                        class="mini-control"
+                        type="button"
+                    >
+                        SOUND
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SYSTEM -->
+            <section class="section-block">
+
+                <div class="section-title">
+                    — SYSTEM
+                </div>
+
+                <div class="system-grid">
+
+                    <div class="system-card">
+                        <span>TIME</span>
+                        <strong id="clock">
+                            00:00:00
+                        </strong>
+                    </div>
+
+                    <div class="system-card">
+                        <span>DATE</span>
+                        <strong id="date">
+                            --
+                        </strong>
+                    </div>
+
+                    <div class="system-card">
+                        <span>STATUS</span>
+                        <strong class="online-text">
+                            ONLINE
+                        </strong>
+                    </div>
+
+                    <div class="system-card">
+                        <span>MODE</span>
+                        <strong>
+                            NEON
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="profile-footer">
+
+                <span>
+                    Made with ♥ by Phong Lyiz
+                </span>
+
+                <span class="footer-separator">
+                    •
+                </span>
+
+                <span id="footerClock">
+                    00:00:00
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+
+    <!-- BACK TO TOP -->
+    <button
+        id="backTop"
+        class="back-top"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- TOAST -->
+    <div id="toast"></div>
+
+
+    <!-- MUSIC -->
+    <audio
+        id="bgMusic"
+        preload="auto"
+        loop
+        playsinline
+    >
+        <source
+            src="assets/music.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
