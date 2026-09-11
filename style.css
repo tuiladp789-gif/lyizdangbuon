@@ -1,0 +1,564 @@
+/* =====================================================
+   🌸 PHONG LYIZ — NEON CYBERPUNK GLASS STYLE
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --card-bg: rgba(15, 23, 42, 0.45);
+    --card-border: rgba(56, 189, 248, 0.4);
+    --accent-purple: #c084fc;
+    --accent-blue: #38bdf8;
+    --accent-cyan: #22d3ee;
+    --accent-pink: #f472b6;
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
+    --glow-blue: rgba(56, 189, 248, 0.6);
+    --glow-pink: rgba(244, 114, 182, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: url('assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Lớp phủ tối mờ hơn để background rõ nét */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 30, 0.35);
+    backdrop-filter: blur(3px);
+    z-index: 0;
+}
+
+#particles, #sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sakura-petal {
+    position: absolute;
+    background: linear-gradient(135deg, #ffb7c5, #ff69b4);
+    border-radius: 15px 0 15px 0;
+    opacity: 0.85;
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); }
+    100% { transform: translateY(105vh) rotate(360deg); }
+}
+
+.mouse-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--glow-blue) 0%, transparent 70%);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    transition: transform 0.08s ease-out;
+}
+
+/* CONTAINER */
+.page {
+    z-index: 2;
+    padding: 32px 16px;
+    width: 100%;
+    max-width: 680px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-theme-frame {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1.5px solid var(--card-border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+                0 0 30px var(--glow-blue);
+    position: relative;
+    will-change: transform;
+}
+
+/* BANNER */
+.banner-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.profile-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 20%, rgba(15, 23, 42, 0.8));
+}
+
+/* HEADER */
+.profile-header-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 32px;
+    margin-top: -60px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 3;
+}
+
+.avatar-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 25px var(--glow-blue), 0 0 10px var(--glow-pink);
+    background: #0f172a;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.status-badge {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 20px;
+    height: 20px;
+    background: #22c55e;
+    border: 3px solid #0f172a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 12px var(--accent-cyan), 0 0 20px var(--glow-blue);
+}
+
+.verified-badge {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--glow-pink);
+}
+
+.profile-tag {
+    font-size: 13px;
+    color: var(--accent-cyan);
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.status-pill-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-dot-green {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.status-divider { color: var(--text-muted); }
+
+/* SECTIONS */
+.section-block {
+    padding: 0 32px;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-pink);
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 8px var(--glow-pink);
+}
+
+/* BIO BOX */
+.bio-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.bio-box strong { color: #fff; text-shadow: 0 0 6px rgba(255,255,255,0.6); }
+
+/* ABOUT CARDS GRID */
+.about-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: var(--accent-cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--glow-blue);
+}
+
+.card-icon {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title { font-size: 13px; font-weight: 700; color: #fff; }
+.about-card small { font-size: 11px; color: var(--text-muted); }
+
+/* BADGES */
+.badges-row {
+    display: flex;
+    gap: 10px;
+}
+
+.badge-item {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.badge-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-pink);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px var(--glow-pink);
+}
+
+/* INTERESTS */
+.interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.interest-tag {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.interest-tag small { color: var(--accent-cyan); font-weight: 400; font-family: 'Fira Code', monospace; }
+
+.interest-tag:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-cyan);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--glow-blue);
+}
+
+/* CONNECT LIST */
+.connect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.connect-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 18px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.connect-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px var(--glow-blue);
+}
+
+.connect-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.connect-icon {
+    font-size: 18px;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.discord-bg { background: rgba(88, 101, 242, 0.6); box-shadow: 0 0 10px rgba(88, 101, 242, 0.5); }
+.tiktok-bg { background: rgba(30, 30, 30, 0.8); border: 1px solid rgba(255,255,255,0.2); }
+.fb-bg { background: rgba(24, 119, 242, 0.6); box-shadow: 0 0 10px rgba(24, 119, 242, 0.5); }
+
+.connect-name { font-size: 14px; font-weight: 700; color: #fff; }
+.connect-card small { font-size: 11px; color: var(--text-muted); font-family: 'Fira Code', monospace; }
+
+.arrow-icon {
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+}
+
+.connect-card:hover .arrow-icon {
+    color: var(--accent-cyan);
+    transform: translate(3px, -3px);
+}
+
+/* MUSIC PLAYER */
+.music-player-wide {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.music-icon-box {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 0 0 15px var(--glow-pink);
+    transition: transform 0.3s ease;
+}
+
+.disk-spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.music-info { flex: 1; }
+.song-title { 
+    font-size: 14px; 
+    font-weight: 700; 
+    color: #fff; 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+.song-artist { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; font-family: 'Fira Code', monospace; }
+
+.progress-track {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-cyan));
+    border-radius: 3px;
+    box-shadow: 0 0 8px var(--accent-cyan);
+    transition: width 0.1s linear;
+}
+
+.play-btn-wide {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.play-btn-wide:hover {
+    background: #fff;
+    color: #0f172a;
+    box-shadow: 0 0 15px #fff;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+.profile-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'Fira Code', monospace;
+    padding: 16px 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* TOAST */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid var(--accent-cyan);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+    box-shadow: 0 0 20px var(--glow-blue);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#toast.toast-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 580px) {
+    .about-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-header-horizontal {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .status-pill-row {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phong Lyiz — Ultimate Anime Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BACKGROUND & VISUAL EFFECTS -->
+    <canvas id="particles"></canvas>
+    <div id="sakura-container"></div>
+    <div class="mouse-glow"></div>
+
+    <!-- MAIN PROFILE PAGE -->
+    <main class="page">
+        <div class="profile-theme-frame">
+
+            <!-- TOP BANNER -->
+            <div class="banner-container">
+                <img src="assets/banner.gif" alt="Banner" class="profile-banner" onerror="this.src='assets/background.jpg'">
+                <div class="banner-overlay"></div>
+            </div>
+
+            <!-- PROFILE HORIZONTAL HEADER -->
+            <div class="profile-header-horizontal">
+                <div class="avatar-wrapper">
+                    <img src="assets/anime-pfp.gif" alt="Phong Lyiz" class="avatar" onerror="this.src='https://i.imgur.com/6VBx3io.png'">
+                    <div class="status-badge" title="Online"></div>
+                </div>
+                <div class="header-info">
+                    <div class="name-container">
+                        <h1 class="profile-name">Phong Lyiz</h1>
+                        <span class="verified-badge" title="Verified Otaku">✓</span>
+                    </div>
+                    <div class="profile-tag">@poongdepzai</div>
+                    <div class="status-pill-row">
+                        <span class="status-dot-green"></span>
+                        <span class="status-text">Online</span>
+                        <span class="status-divider">•</span>
+                        <span class="status-text">Vietnam 🇻🇳</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: ABOUT ME -->
+            <div class="section-block">
+                <div class="section-title">— ABOUT ME</div>
+                <div class="bio-box">
+                    Hey, I'm <strong>Phong Lyiz</strong> 👋<br>
+                    A guy who loves <strong>technology</strong>, <strong>games</strong> and <strong>anime</strong>.
+                </div>
+                <div class="about-cards-grid">
+                    <div class="about-card">
+                        <span class="card-icon">💻</span>
+                        <div>
+                            <div class="card-title">IT</div>
+                            <small>Student</small>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <span class="card-icon">🎮</span>
+                        <div>
+                            <div class="card-title">Gamer</div>
+                            <small>Genshin / HSR / MC</small>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <span class="card-icon">🌸</span>
+                        <div>
+                            <div class="card-title">Anime</div>
+                            <small>Enjoyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: BADGES -->
+            <div class="section-block">
+                <div class="section-title">— BADGES</div>
+                <div class="badges-row">
+                    <div class="badge-item" title="Gamer">🎮</div>
+                    <div class="badge-item" title="Developer">💻</div>
+                    <div class="badge-item" title="Otaku">🌸</div>
+                    <div class="badge-item" title="V.I.P">✨</div>
+                </div>
+            </div>
+
+            <!-- SECTION: INTERESTS -->
+            <div class="section-block">
+                <div class="section-title">— INTERESTS</div>
+                <div class="interests-grid">
+                    <span class="interest-tag">Genshin Impact <small>(UID: 879407286)</small></span>
+                    <span class="interest-tag">Honkai: Star Rail <small>(UID: 841646342)</small></span>
+                    <span class="interest-tag">Minecraft</span>
+                    <span class="interest-tag">Anime</span>
+                    <span class="interest-tag">Programming</span>
+                    <span class="interest-tag">Japanese</span>
+                </div>
+            </div>
+
+            <!-- SECTION: CONNECT -->
+            <div class="section-block">
+                <div class="section-title">— CONNECT</div>
+                <div class="connect-list">
+                    <a href="https://discord.com/users/930713687893893130" target="_blank" class="connect-card">
+                        <div class="connect-left">
+                            <span class="connect-icon discord-bg">D</span>
+                            <div>
+                                <div class="connect-name">Discord</div>
+                                <small>@poongdepzai</small>
+                            </div>
+                        </div>
+                        <span class="arrow-icon">↗</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@ngudong24h" target="_blank" class="connect-card">
+                        <div class="connect-left">
+                            <span class="connect-icon tiktok-bg">♪</span>
+                            <div>
+                                <div class="connect-name">TikTok</div>
+                                <small>@ngudong24h</small>
+                            </div>
+                        </div>
+                        <span class="arrow-icon">↗</span>
+                    </a>
+                    <a href="https://www.facebook.com/dangngudongzz/" target="_blank" class="connect-card">
+                        <div class="connect-left">
+                            <span class="connect-icon fb-bg">f</span>
+                            <div>
+                                <div class="connect-name">Facebook</div>
+                                <small>@dangngudongzz</small>
+                            </div>
+                        </div>
+                        <span class="arrow-icon">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION: NOW PLAYING -->
+            <div class="section-block">
+                <div class="section-title">— NOW PLAYING</div>
+                <div class="music-player-wide">
+                    <div class="music-icon-box" id="musicDisk">
+                        ♪
+                    </div>
+                    <div class="music-info">
+                        <div class="song-title">Phong buồn</div>
+                        <div class="song-artist">Phong Lyiz's playlist</div>
+                        <div class="progress-track" id="progressTrack">
+                            <div class="progress-fill" id="progress"></div>
+                        </div>
+                    </div>
+                    <button id="playBtn" class="play-btn-wide">❚❚</button>
+                </div>
+            </div>
+
+            <!-- FOOTER CLOCK & INFO -->
+            <div class="profile-footer">
+                <span>Made with ♥ by Phong Lyiz</span> • <span id="clock">00:00:00</span>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
